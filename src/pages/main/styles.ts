@@ -33,7 +33,6 @@ export const styles = StyleSheet.create({
     top: 142,
   },
   button: {
-    // button styling
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
@@ -47,7 +46,6 @@ export const styles = StyleSheet.create({
     flex: 0,
   },
   input: {
-    // input styling
     alignItems: 'center',
     padding: 16,
     gap: 8,
@@ -60,10 +58,10 @@ export const styles = StyleSheet.create({
   },
   containerTasks: {
     flexDirection: 'column',
+    flex: 1,
     alignItems: 'flex-start',
     padding: 0,
     marginVertical: 20,
-    position: 'absolute',
     height: 247,
     left: 24,
     right: 24,
@@ -89,16 +87,16 @@ export const styles = StyleSheet.create({
     marginHorizontal: 4,
     width: 87,
     height: 19,
-    flex: 0,
-    alignSelf: 'flex-end', // adicionado
+    flex: 1,
+    alignSelf: 'flex-end',
   },
   containerTasksDone: {
     flexDirection: 'row',
+    flex: 1,
     padding: 0,
     marginHorizontal: 4,
     width: 111,
     height: 19,
-    flex: 0,
     alignSelf: 'flex-end',
   },
   taskCreatedDoneText: {
@@ -131,7 +129,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#333333',
     flex: 0,
     alignSelf: 'auto',
-    textAlign: 'center', // adicionado
+    textAlign: 'center',
   },
   containerTaskIsEmpty: {
     display: 'flex',

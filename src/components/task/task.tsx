@@ -1,35 +1,35 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import Done from '../../../assets/done.png';
 import Undone from '../../../assets/undone.png';
 import Trash from '../../../assets/trash.png';
 import {style} from './styles';
-interface IProps {
+
+interface ITask {
   text: string;
   done: boolean;
 }
+interface IProps {
+  task: ITask;
+  onDone?: () => void;
+  onUnDone?: () => void;
+  onRemove?: () => void;
+}
 
-export function Task({text, done}: IProps) {
-  const [task, setTask] = useState<IProps>({text, done});
-  function handleDoneTask() {
-    if (!task.done) {
-      setTask({text: task.text, done: true});
-    } else {
-      setTask({text: task.text, done: false});
-    }
-  }
+export function Task({task, onDone, onUnDone, onRemove}: IProps) {
   return (
     <>
-      {console.log(task)}
       <View style={style.taskContainer}>
-        <TouchableOpacity style={style.done} onPress={handleDoneTask}>
+        <TouchableOpacity
+          style={style.done}
+          onPress={task.done === false ? onDone : onUnDone}>
           <Image source={task.done === true ? Done : Undone} />
         </TouchableOpacity>
         <Text style={task.done === false ? style.taskText : style.TextDone}>
           {task.text}
         </Text>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onRemove}>
           <Image style={style.trashIcon} source={Trash} />
         </TouchableOpacity>
       </View>

@@ -72,6 +72,5 @@ export const style = StyleSheet.create({
     flex: 1,
     flexGrow: 1,
     flexShrink: 0,
-    order: 1,
   },
 });
