@@ -51,6 +51,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
     gap: 8,
+    color: '#FFF',
     width: 271,
     height: 54,
     backgroundColor: '#262626',
