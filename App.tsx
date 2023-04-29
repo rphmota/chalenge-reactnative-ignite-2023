@@ -6,10 +6,16 @@
  */
 
 import React from 'react';
+import {StatusBar} from 'react-native';
 import {Main} from './src/pages/main/main';
 
 function App(): JSX.Element {
-  return <Main />;
+  return (
+    <>
+      <StatusBar barStyle={'light-content'} />
+      <Main />
+    </>
+  );
 }
 
 export default App;
